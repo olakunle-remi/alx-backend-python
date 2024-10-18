@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-'''
-    The basics of async.
-'''
+"""
+A module for asynchronous tasks using asyncio.
+"""
 
 import asyncio
 import random
@@ -9,9 +9,9 @@ import random
 
 async def wait_random(max_delay: int = 10) -> float:
     """
-    waits for a random delay between 0 and max_delay (included and float value)
-    seconds and eventually returns it.
+    Wait for a random amount of time up to `max_delay` seconds.
+    Returns the amount of time waited.
     """
-    delay = random.uniform(0, max_delay)
-    await asyncio.sleep(delay)
-    return delay
+    wait_time = random.random() * max_delay
+    await asyncio.sleep(wait_time)
+    return wait_time
